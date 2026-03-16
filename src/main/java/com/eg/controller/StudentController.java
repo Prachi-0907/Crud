@@ -44,7 +44,7 @@ public class StudentController {
 		ss.deleteStu(id);
 	}
 	
-	@PutMapping("/put")
+	@PutMapping("/put/{id}")
 	public Student updateStu(@RequestBody Student s, @PathVariable int id) {
 		return ss.updateStu(s,id);
 	}
