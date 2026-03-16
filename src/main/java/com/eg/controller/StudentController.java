@@ -28,18 +28,18 @@ public class StudentController {
 	}
 	
 	@GetMapping("/getAll")
-	public List<Student> getStu(@RequestBody Student s){
+	public List<Student> getAll(){
 		
-		return ss.getStu(s);
+		return ss.getAll();
 		
 	}
 	
-	@GetMapping("/get")
+	@GetMapping("/get/{id}")
 	public Student getSTU(@PathVariable int id) {
-		return ss.getStu(id);
+		return ss.getSTU(id);
 	}
 	
-	@DeleteMapping("/delete")
+	@DeleteMapping("/delete/{id}")
 	public void deletStu(@PathVariable int id) {
 		ss.deleteStu(id);
 	}
