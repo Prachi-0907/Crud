@@ -46,6 +46,16 @@ public class StudentServiceImpl implements StudentService{
 		sr.deleteById(id);
 	}
 
+	@Override
+	public Student updateStu(Student s, int id) {
+		Student stu = sr.findById(id).orElse(null);
+		
+		stu.setName(s.getName());
+		stu.setEmail(s.getEmail());
+		
+		return sr.save(stu);
+	}
+
 	
 	
 
