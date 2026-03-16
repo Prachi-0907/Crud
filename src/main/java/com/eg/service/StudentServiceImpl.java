@@ -22,9 +22,22 @@ public class StudentServiceImpl implements StudentService{
 	}
 
 	@Override
-	public List<Student> getAll() {
+	public List<Student> getStu(Student s) {
 		
 		return sr.findAll();
+	}
+
+	@Override
+	public Student getStu(int id) {
+		
+		Optional<Student> op = sr.findById(id);
+		
+		if(op.isPresent()) {
+			Student s = op.get();
+			return s;
+		}
+		
+		return null;
 	}
 
 	@Override
@@ -41,17 +54,6 @@ public class StudentServiceImpl implements StudentService{
 		stu.setEmail(s.getEmail());
 		
 		return sr.save(stu);
-	}
-
-	@Override
-	public Student getSTU(int id) {
-Optional<Student> op = sr.findById(id);
-		
-		if(op.isPresent()) {
-			Student s = op.get();
-			return s;
-		}
-		return null;
 	}
 
 	

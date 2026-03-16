@@ -8,9 +8,9 @@ public interface StudentService {
 
 	Student postStu(Student s);
 
-	List<Student> getAll();
+	List<Student> getStu(Student s);
 
-	Student getSTU(int id);
+	Student getStu(int id);
 
 	void deleteStu(int id);
 
